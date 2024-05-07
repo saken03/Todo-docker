@@ -1,22 +1,22 @@
-const express = require('express')
+const express = require("express");
 const router = express.Router();
 
-const Todo = require('../models/todo');
+const Todo = require("../models/todo");
 
-// Get all todos
-router.get('/', async (req, res) => {
-  const todos = await Todo.find({is_complete: false });
+// GET all todos
+router.get("/", async (req, res) => {
+  const todos = await Todo.find({ is_complete: false });
   res.send(todos);
 });
 
-// Get todo based on ID
-router.get('/:id', async (req, res) => {
+// GET todo based on ID
+router.get("/:id", async (req, res) => {
   const todo = await Todo.findOne({ _id: req.params.id });
   res.send(todo);
 });
 
-// Post create new todo
-router.post('/', async (req, res) => {
+// POST create new todo
+router.post("/", async (req, res) => {
   console.log(req.body);
   const todo = new Todo({
     title: req.body.title,
@@ -28,8 +28,8 @@ router.post('/', async (req, res) => {
   res.send(todo);
 });
 
-// Update todo
-router.patch('/:id', async (req, res) => {
+// UPDATE todo
+router.patch("/:id", async (req, res) => {
   try {
     const todo = await Todo.findOne({ _id: req.params.id });
 
@@ -48,19 +48,19 @@ router.patch('/:id', async (req, res) => {
     await todo.save();
     res.send(todo);
   } catch {
-      res.status(404);
-      res.send({ error: "Todo does not exist!" });
+    res.status(404);
+    res.send({ error: "Todo does not exist!" });
   }
 });
 
-// Delete todo
-router.delete('/:id', async (req, res) => {
+// DELETE todo
+router.delete("/:id", async (req, res) => {
   try {
     await Todo.deleteOne({ _id: req.params.id });
     res.status(204).send();
   } catch {
     res.status(404);
-    res.send({ error: 'Todo does not exist! '});
+    res.send({ error: "Todo does not exist!" });
   }
 });
 
