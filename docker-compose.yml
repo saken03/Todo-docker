@@ -33,7 +33,6 @@ services:
 
 networks:
   network-backend:
-    driver: bridge
 
 volumes: 
   mongodb_data:
