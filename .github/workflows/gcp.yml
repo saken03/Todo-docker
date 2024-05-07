@@ -22,7 +22,7 @@ jobs:
 
 # Tusinbedim
     - name: Docker Compose Up
-      run: docker compose up -d
+      run: docker compose build
 
     - name: Configure Docker Client
       run: |-
