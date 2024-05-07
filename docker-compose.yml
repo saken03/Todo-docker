@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   web:
+    image: web
     build: ./frontend
     depends_on:
       - api
@@ -9,6 +10,7 @@ services:
     networks:
       - network-backend
   api:
+    image: api
     build: ./backend
     depends_on:
       - mongo
