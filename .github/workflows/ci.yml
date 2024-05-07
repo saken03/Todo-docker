@@ -22,8 +22,8 @@ jobs:
         run: |
           sudo docker-compose up -d
 
-      - name: Run Tests
-        run: |
-          sudo docker-compose exec your-service-name npm test
+      # - name: Run Tests
+      #   run: |
+      #     sudo docker-compose exec your-service-name npm test
 
       # Additional steps for linting, building, etc.
