@@ -42,8 +42,8 @@ jobs:
       run: |- 
         services=(web api mongo)  # Replace with your service names
         for service in "${services[@]}"; do
-          docker tag $service:latest gcr.io/$PROJECT_ID/$service:latest
-          docker tag $service:latest gcr.io/$PROJECT_ID/$service:$GIT_TAG
-          docker push gcr.io/$PROJECT_ID/$service:latest
-          docker push gcr.io/$PROJECT_ID/$service:$GIT_TAG
+          docker tag $service:latest gcr.io/server-administration-422608/$service:latest
+          docker tag $service:latest gcr.io/server-administration-422608/$service:$GIT_TAG
+          docker push gcr.io/server-administration-422608/$service:latest
+          docker push gcr.io/server-administration-422608/$service:$GIT_TAG
         done
