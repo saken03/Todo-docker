@@ -10,6 +10,6 @@ else
 fi
 
 echo "Starting services..."
-docker-compose up -d
+docker-compose up
 
 echo "Setup completed"
