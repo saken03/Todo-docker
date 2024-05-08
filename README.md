@@ -45,4 +45,8 @@ To get started with this project:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/your-repository/todo-app.git
+   ```
+2. **Navigate to the project directory**
+```bash
    cd todo-app
+```
